@@ -43,7 +43,7 @@ def post_list(request):
         trans_3= translation['character_count']
         wc = "  Word Count:"
         cc = "  Character Count:"
-        trans_ln = translation_1
+        trans_ln = trans_1
         trans_wc =   wc +str(tran) +" |"+ cc + str(tran_2)
         obj = json.dumps(trans_ln, indent=2, ensure_ascii=False)
         obj_n = json.dumps(trans_wc, indent=2, ensure_ascii=False)
