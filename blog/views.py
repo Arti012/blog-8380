@@ -38,15 +38,15 @@ def post_list(request):
             target='es')
         print(translation)
 
-        translation_1 = translation['translations'][0]['translation']
-        tran = translation['word_count']
-        tran_2= translation['character_count']
+        trans_1 = translation['translations'][0]['translation']
+        trans_2 = translation['word_count']
+        trans_3= translation['character_count']
         wc = "  Word Count:"
         cc = "  Character Count:"
-        translation_new = translation_1
-        translation_1 =   wc +str(tran) +" |"+ cc + str(tran_2)
-        obj = json.dumps(translation_new, indent=2, ensure_ascii=False)
-        obj_n = json.dumps(translation_1, indent=2, ensure_ascii=False)
+        trans_ln = translation_1
+        trans_wc =   wc +str(tran) +" |"+ cc + str(tran_2)
+        obj = json.dumps(trans_ln, indent=2, ensure_ascii=False)
+        obj_n = json.dumps(trans_wc, indent=2, ensure_ascii=False)
         #obj = json.loads(obj)
 
         post.obj2 = json.loads(obj)
