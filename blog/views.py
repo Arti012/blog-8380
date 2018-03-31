@@ -36,12 +36,21 @@ def post_list(request):
             text=post.text,
             source='en',
             target='es')
-        theTranslation = translation['translations'][0]['translation']
+        print(translation)
 
-        obj = json.dumps(theTranslation, indent=2, ensure_ascii=False)
+        translation_1 = translation['translations'][0]['translation']
+        tran = translation['word_count']
+        tran_2= translation['character_count']
+        wc = "  Word Count:"
+        cc = "  Character Count:"
+        translation_new = translation_1
+        translation_1 =   wc +str(tran) +" |"+ cc + str(tran_2)
+        obj = json.dumps(translation_new, indent=2, ensure_ascii=False)
+        obj_n = json.dumps(translation_1, indent=2, ensure_ascii=False)
         #obj = json.loads(obj)
-        #print(translation["translations"])
+
         post.obj2 = json.loads(obj)
+        post.obj3 = json.loads(obj_n)
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
