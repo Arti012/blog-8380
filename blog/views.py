@@ -44,7 +44,7 @@ def post_list(request):
         wc = "  Word Count:"
         cc = "  Character Count:"
         trans_ln = trans_1
-        trans_wc =   wc +str(tran) +" |"+ cc + str(tran_2)
+        trans_wc =   wc +str(trans_2) +" |"+ cc + str(trans_3)
         obj = json.dumps(trans_ln, indent=2, ensure_ascii=False)
         obj_n = json.dumps(trans_wc, indent=2, ensure_ascii=False)
         #obj = json.loads(obj)
